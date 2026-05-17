@@ -1,0 +1,169 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:linear-gradient(to right,#00152d,#001b3d);
+  color:white;
+}
+
+header{
+  padding:25px 8%;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+header h1{
+  font-size:42px;
+}
+
+.sabores{
+  padding:80px 8%;
+}
+
+.titulo-seccion{
+  font-size:42px;
+  margin-bottom:40px;
+  text-align:center;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  justify-items:center;
+  gap:25px;
+}
+
+.flavor-card{
+  width:100%;
+  max-width:260px;
+  background:rgba(255,255,255,0.05);
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.flavor-card:hover{
+  transform:translateY(-8px);
+}
+
+.flavor-image{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+
+.flavor-card{
+  overflow:hidden;
+}
+
+.blue-gradient{
+  background:linear-gradient(180deg,#2952ff,#182b6d);
+}
+
+.dark-gradient{
+  background:linear-gradient(90deg,#334155,#020617);
+}
+
+.flavor-content{
+  padding:25px;
+  background:rgba(18,37,68,0.9);
+}
+
+.flavor-content h4{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.flavor-content p{
+  color:#d6dce5;
+  line-height:1.7;
+  font-size:16px;
+}
+
+.btn-sabores{
+  padding:16px 40px;
+  background:linear-gradient(135deg,#2952ff,#1d4ed8);
+  color:white;
+  border:none;
+  border-radius:20px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(41,82,255,0.3);
+}
+
+.btn-sabores:hover{
+  transform:translateY(-4px);
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+}
+
+footer{
+  margin-top:60px;
+  padding:40px 8%;
+  border-top:1px solid rgba(255,255,255,0.1);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.sociales{
+  display:flex;
+  gap:20px;
+}
+
+.sociales a{
+  color:#d6dce5;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.sociales a:hover{
+  color:white;
+}
+
+.sociales img{
+  width:90px;
+  height:auto;
+  object-fit:contain;
+}
+.boton-container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:60px;
+}
+
+.btn-sabores{
+  padding:18px 45px;
+  background:linear-gradient(135deg,#2952ff,#1d4ed8);
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:600;
+  border-radius:18px;
+  transition:0.3s;
+  box-shadow:0 10px 25px rgba(41,82,255,0.35);
+}
+
+.btn-sabores:hover{
+  transform:translateY(-5px) scale(1.03);
+  background:linear-gradient(135deg,#3b82f6,#2563eb);
+  box-shadow:0 15px 30px rgba(59,130,246,0.4);
+}
+
+.logo-link{
+  text-decoration:none;
+  color:white;
+}
+
+.logo-link:hover{
+  color:#93c5fd;
+}
