@@ -4,181 +4,151 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nou Blau</title>
-
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <header>
     <h1>Nou Blau</h1>
   </header>
 
-  <!-- SABORES -->
+  <main class="contenedor-principal">
 
-  <section class="sabores">
+    <div class="contenido-izquierdo">
+      
+      <section class="sabores">
+        <h2 class="titulo-seccion">Nuestros Helados</h2>
+        <div class="cards">
+          <div class="flavor-card">
+            <img src="img/vainilla.png" alt="vainilla" class="flavor-image">
+            <div class="flavor-content"><h4>Vainilla</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/choco .png" alt="Chocolate" class="flavor-image">
+            <div class="flavor-content"><h4>Chocolate</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/fresa.png" alt="fresa" class="flavor-image">
+            <div class="flavor-content"><h4>Fresa</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/oreo.png" alt="oreo" class="flavor-image">
+            <div class="flavor-content"><h4>Oreo</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/pistacho.png" alt="Pistacho" class="flavor-image">
+            <div class="flavor-content"><h4>Pistacho</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/chips.png" alt="Chips" class="flavor-image">
+            <div class="flavor-content"><h4>Chips Ahoy</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/dulceleche.png" alt="Dleche" class="flavor-image">
+            <div class="flavor-content"><h4>Dulce Leche</h4></div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/mango.png" alt="Mango" class="flavor-image">
+            <div class="flavor-content"><h4>Mango</h4></div>
+          </div>
+        </div>
 
-  <h2 class="titulo-seccion">Sabores</h2>
+        <div class="boton-container">
+          <a href="sabores.html" class="btn-sabores">Ver más sabores</a>
+        </div>
+      </section>
 
-  <div class="cards">
+      <section class="sabores">
+        <h2 class="titulo-seccion">Granizados Caseros</h2>
+        <p class="nota-artesanal">¡Todos nuestros granizados son hechos por nosotros!</p>
+        
+        <div class="cards">
+          <div class="flavor-card">
+            <img src="img/limon.png" alt="Granizado de Limón" class="flavor-image">
+            <div class="flavor-content">
+              <h4>Limón</h4>
+              <p class="precios-card">P: 2.30€ | M: 2.60€ | G: 3.90€</p>
+            </div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/cafe.png" alt="Granizado de Café" class="flavor-image">
+            <div class="flavor-content">
+              <h4>Café</h4>
+              <p class="precios-card">P: 2.30€ | M: 2.60€ | G: 3.90€</p>
+            </div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/horchata.png" alt="Horchata" class="flavor-image">
+            <div class="flavor-content">
+              <h4>Horchata</h4>
+              <p class="precios-card">P: 2.30€ | M: 2.60€ | G: 3.90€</p>
+            </div>
+          </div>
+          <div class="flavor-card">
+            <img src="img/leche.png" alt="Leche Preparada" class="flavor-image">
+            <div class="flavor-content">
+              <h4>Leche Preparada</h4>
+              <p class="precios-card">P: 2.30€ | M: 2.60€ | G: 3.90€</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="info-extra-box">
+          <p>✨ <strong>¡Combínalos como quieras!</strong> Los puedes mezclar a tu gusto o añadirles cualquier bola de helado ncima.</p>
+        </div>
+      </section>
 
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/vainilla.png" alt="vainilla" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Vainilla</h4>
-      </div>
     </div>
 
-   <div class="flavor-card">
-
-  <img src="../Proyecto-1/IMG/choco .png" alt="Chocolate" class="flavor-image">
-
-  <div class="flavor-content">
-    <h4>Chocolate</h4>
-  </div>
-
-</div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/fresa.png" alt="fresa" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Fresa</h4>
+    <aside class="barra-lateral">
+      
+      <div class="seccion-sidebar">
+        <h3 class="titulo-sidebar">Terrinas de Helado</h3>
+        <div class="lista-precios">
+          <div class="item-precio"><span>Pequeña (P)</span><strong>2.90€</strong></div>
+          <div class="item-precio"><span>Mediana (M)</span><strong>3.50€</strong></div>
+          <div class="item-precio"><span>Grande (L)</span><strong>4.60€</strong></div>
+          <div class="item-precio"><span>Gigante (XXL)</span><strong>9.00€</strong></div>
+        </div>
       </div>
-    </div>
 
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/oreo.png" alt="oreo" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Oreo</h4>
+      <div class="seccion-sidebar">
+        <h3 class="titulo-sidebar">Toppings & Siropes</h3>
+        <ul class="lista-tops">
+          <li><strong>🍫 Sirope de Chocolate:</strong> El clásico que nunca falla.</li>
+          <li><strong>🤍 Sirope de Choco Blanco:</strong> Dulce e irresistible.</li>
+          <li><strong>🍓 Sirope de Fresa:</strong> Con un toque frutal delicioso.</li>
+          <li><strong>🍯 Sirope de Caramelo:</strong> Perfecto para los más golosos.</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/pistacho.png" alt="Pistacho" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Pistacho</h4>
+      <div class="seccion-sidebar">
+        <h3 class="titulo-sidebar">Los más pedidos</h3>
+        <ul class="lista-tops">
+          <li><strong>⭐ Nacional:</strong> El favorito de la casa.</li>
+          <li><strong>⭐ Valenciano:</strong> Sabor excepciona.l</li>
+          <li><strong>⭐ Cubano:</strong> Una mezcla irresistible.</li>
+        </ul>
       </div>
-    </div>
 
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/chips.png" alt="Chips" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Chips Ahoy</h4>
+      <div class="seccion-sidebar">
+        <h3 class="titulo-sidebar">Nuestros Batidos</h3>
+        <p class="descripcion-sidebar">
+          Créalo combinando una bola de tu helado favorito mezclada con nuestra deliciosa Leche Preparada 🥛
+        </p>
+        <span class="badge-lactosa">¡Sin Lactosa para todos los públicos!</span>
       </div>
-    </div>
 
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/dulceleche.png" alt="Dleche" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Dulce Leche</h4>
-      </div>
-    </div>
+    </aside>
 
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/mango.png" alt="Mango" class="flavor-image">
-      <div class="flavor-content">
-        <h4>Mango</h4>
-      </div>
-    </div>
-
-  </div>
-
-<div class="boton-container">
-  <a href="./sabores.html" class="btn-sabores">
-    Ver sabores
-  </a>
-</div>
-
-</section>
-
-  <!-- TOPPINGS --><section class="sabores">
-
-  <h2 class="titulo-seccion">Toppings</h2>
-
-  <div class="cards">
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/Sfresa.png" alt="Sfresa" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Sirope de Fresa</h4>
-      </div>
-    </div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/Schoco.png" alt="Schoco" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Sirope de chocolate</h4>
-      </div>
-    </div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/SDL.png" alt="SDL" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Sirope de Caramelo</h4>
-      </div>
-    </div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/Sblanco.png" alt="Sblanco" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Sirope de chcocolate Blanco</h4>
-      </div>
-    </div>
-
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/Toreo.png" alt="oreo" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Oreo</h4>
-      </div>
-    </div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/lacasi.png" alt="Lacasitos" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Lacasitos</h4>
-      </div>
-    </div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/Tgalle.png" alt="Galleta" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>Galleta</h4>
-      </div>
-    </div>
-
-    <div class="flavor-card">
-  <img src="../Proyecto-1/IMG/kit.png" alt="KitKat" class="flavor-image">
-
-      <div class="flavor-content">
-        <h4>KitKat</h4>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- FOOTER -->
+  </main>
 
   <footer>
-
-    <div>
-      <h3>Nou Blau</h3>
-    </div>
-
+    <div><h3>Nou Blau</h3></div>
     <div class="sociales">
       <a href="#">Instagram</a>
       <a href="#">Facebook</a>
     </div>
-
   </footer>
 
 </body>

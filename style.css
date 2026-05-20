@@ -11,7 +11,7 @@ body{
 }
 
 header{
-  padding:25px 8%;
+  padding:25px 5%;
   border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
@@ -19,26 +19,53 @@ header h1{
   font-size:42px;
 }
 
+/* --- CONTENEDOR PRINCIPAL: AHORA CUBRE TODO EL ANCHO --- */
+.contenedor-principal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;             /* Cubre todo el ancho de la pantalla */
+  max-width: 100%;         /* Eliminamos el tope anterior para que estire */
+  padding: 40px 5%;
+  gap: 50px;               /* Buen espacio de separación */
+}
+
+/* El contenido de los helados y granizados se estira para llenar la izquierda */
+.contenido-izquierdo {
+  flex: 3;
+}
+
 .sabores{
-  padding:80px 8%;
+  padding: 20px 0 40px 0;
 }
 
 .titulo-seccion{
   font-size:42px;
-  margin-bottom:40px;
+  margin-bottom:20px;
   text-align:center;
 }
 
+.nota-artesanal {
+  text-align: center;
+  color: #93c5fd;
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* --- TARJETAS AUTO-AJUSTABLES Y CENTRADAS --- */
 .cards{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  justify-items:center;
-  gap:25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 25px;
+  width: 100%;
 }
 
 .flavor-card{
-  width:100%;
-  max-width:260px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 260px;
   background:rgba(255,255,255,0.05);
   border-radius:30px;
   overflow:hidden;
@@ -57,52 +84,144 @@ header h1{
   display:block;
 }
 
-.flavor-card{
-  overflow:hidden;
-}
-
-.blue-gradient{
-  background:linear-gradient(180deg,#2952ff,#182b6d);
-}
-
-.dark-gradient{
-  background:linear-gradient(90deg,#334155,#020617);
-}
-
 .flavor-content{
   padding:25px;
   background:rgba(18,37,68,0.9);
 }
 
 .flavor-content h4{
-  font-size:28px;
-  margin-bottom:15px;
+  font-size:24px;
+  margin-bottom:10px;
 }
 
-.flavor-content p{
-  color:#d6dce5;
-  line-height:1.7;
-  font-size:16px;
+.precios-card {
+  color: #4da6ff;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.info-extra-box {
+  background: rgba(41, 82, 255, 0.1);
+  border: 1px solid rgba(41, 82, 255, 0.3);
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* --- BARRA LATERAL FIJA (STICKY EFFECT) --- */
+.barra-lateral {
+  flex: 1; 
+  min-width: 320px;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  
+  /* Esto es lo que hace la magia de quedarse quieta al bajar */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 40px;               /* Distancia que se despega del techo de la pantalla al bajar */
+  height: max-content;     /* Evita que se estire feo hacia abajo */
+}
+
+.seccion-sidebar {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.titulo-sidebar {
+  font-size: 22px;
+  color: white;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(41, 82, 255, 0.4);
+}
+
+.lista-precios {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-precio {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.item-precio strong {
+  color: #4da6ff;
+}
+
+.lista-tops {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.descripcion-sidebar {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #d6dce5;
+  margin-bottom: 15px;
+}
+
+.badge-lactosa {
+  display: inline-block;
+  background: #10b981;
+  color: white;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+/* BOTONES Y ENLACES */
+.boton-container{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  margin-top:40px;
 }
 
 .btn-sabores{
-  padding:16px 40px;
+  padding:18px 45px;
   background:linear-gradient(135deg,#2952ff,#1d4ed8);
   color:white;
-  border:none;
-  border-radius:20px;
+  text-decoration:none;
   font-size:18px;
-  font-weight:bold;
-  cursor:pointer;
+  font-weight:600;
+  border-radius:18px;
   transition:0.3s;
-  box-shadow:0 10px 25px rgba(41,82,255,0.3);
+  box-shadow:0 10px 25px rgba(41, 82, 255, 0.35);
 }
 
 .btn-sabores:hover{
-  transform:translateY(-4px);
+  transform:translateY(-5px) scale(1.03);
   background:linear-gradient(135deg,#3b82f6,#2563eb);
 }
 
+.logo-link{
+  text-decoration:none;
+  color:white;
+}
+
+.logo-link:hover{
+  color:#93c5fd;
+}
+
+/* --- FOOTER COMPLETO --- */
 footer{
   margin-top:60px;
   padding:40px 8%;
@@ -122,48 +241,28 @@ footer{
 .sociales a{
   color:#d6dce5;
   text-decoration:none;
-  transition:0.3s;
 }
 
-.sociales a:hover{
-  color:white;
+/* RESPONSIVE: Si la pantalla es pequeña (Móviles), la barra va abajo y deja de ser fija */
+@media (max-width: 1150px) {
+  .contenedor-principal {
+    flex-direction: column;
+  }
+  .barra-lateral {
+    position: static;      /* Desactiva el efecto fijo en móviles */
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .seccion-sidebar {
+    flex: 1;
+    min-width: 280px;
+  }
 }
 
-.sociales img{
-  width:90px;
-  height:auto;
-  object-fit:contain;
-}
-.boton-container{
-  width:100%;
-  display:flex;
-  justify-content:center;
-  margin-top:60px;
-}
-
-.btn-sabores{
-  padding:18px 45px;
-  background:linear-gradient(135deg,#2952ff,#1d4ed8);
-  color:white;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:600;
-  border-radius:18px;
-  transition:0.3s;
-  box-shadow:0 10px 25px rgba(41,82,255,0.35);
-}
-
-.btn-sabores:hover{
-  transform:translateY(-5px) scale(1.03);
-  background:linear-gradient(135deg,#3b82f6,#2563eb);
-  box-shadow:0 15px 30px rgba(59,130,246,0.4);
-}
-
-.logo-link{
-  text-decoration:none;
-  color:white;
-}
-
-.logo-link:hover{
-  color:#93c5fd;
+@media (max-width: 600px) {
+  .barra-lateral {
+    flex-direction: column;
+  }
 }
