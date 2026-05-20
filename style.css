@@ -19,19 +19,18 @@ header h1{
   font-size:42px;
 }
 
-/* --- CONTENEDOR PRINCIPAL: AHORA CUBRE TODO EL ANCHO --- */
+/* --- CONTENEDOR PRINCIPAL: SE ADAPTA AL ANCHO DE LA PANTALLA --- */
 .contenedor-principal {
   display: flex;
   flex-direction: row;
-  width: 100%;             /* Cubre todo el ancho de la pantalla */
-  max-width: 100%;         /* Eliminamos el tope anterior para que estire */
+  width: 100%;             
   padding: 40px 5%;
-  gap: 50px;               /* Buen espacio de separación */
+  gap: 40px;               
 }
 
-/* El contenido de los helados y granizados se estira para llenar la izquierda */
 .contenido-izquierdo {
   flex: 3;
+  min-width: 0;
 }
 
 .sabores{
@@ -40,37 +39,35 @@ header h1{
 
 .titulo-seccion{
   font-size:42px;
-  margin-bottom:20px;
-  text-align:center;
+  margin-bottom:30px;
+  text-align: left; /* Alineado a la izquierda para mantener la estructura limpia */
 }
 
 .nota-artesanal {
-  text-align: center;
   color: #93c5fd;
   font-size: 18px;
   margin-bottom: 40px;
   font-style: italic;
 }
 
-/* --- TARJETAS AUTO-AJUSTABLES Y CENTRADAS --- */
-.cards{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center; 
+/* --- CUADRÍCULA PERFECTA (CSS GRID) --- */
+/* Esto obliga a que siempre haya 3 columnas perfectas alineadas a la izquierda */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr)); 
   gap: 25px;
   width: 100%;
 }
 
 .flavor-card{
   width: 100%;
-  min-width: 250px;
-  max-width: 260px;
   background:rgba(255,255,255,0.05);
   border-radius:30px;
   overflow:hidden;
   border:1px solid rgba(255,255,255,0.08);
   transition:0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .flavor-card:hover{
@@ -82,11 +79,13 @@ header h1{
   height:180px;
   object-fit:cover;
   display:block;
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .flavor-content{
   padding:25px;
   background:rgba(18,37,68,0.9);
+  flex-grow: 1; /* Hace que todas las cajitas midan exactamente lo mismo de alto */
 }
 
 .flavor-content h4{
@@ -106,12 +105,12 @@ header h1{
   padding: 20px;
   border-radius: 20px;
   margin-top: 40px;
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   line-height: 1.6;
 }
 
-/* --- BARRA LATERAL FIJA (STICKY EFFECT) --- */
+/* --- BARRA LATERAL FIJA IMPRESCINDIBLE --- */
 .barra-lateral {
   flex: 1; 
   min-width: 320px;
@@ -119,12 +118,10 @@ header h1{
   display: flex;
   flex-direction: column;
   gap: 30px;
-  
-  /* Esto es lo que hace la magia de quedarse quieta al bajar */
   position: -webkit-sticky;
   position: sticky;
-  top: 40px;               /* Distancia que se despega del techo de la pantalla al bajar */
-  height: max-content;     /* Evita que se estire feo hacia abajo */
+  top: 30px;               
+  height: max-content;     
 }
 
 .seccion-sidebar {
@@ -187,11 +184,11 @@ header h1{
   width: 100%;
 }
 
-/* BOTONES Y ENLACES */
+/* BOTONES */
 .boton-container{
   width:100%;
   display:flex;
-  justify-content:center;
+  justify-content: flex-start; /* Alineado al flujo de las tarjetas */
   margin-top:40px;
 }
 
@@ -212,19 +209,10 @@ header h1{
   background:linear-gradient(135deg,#3b82f6,#2563eb);
 }
 
-.logo-link{
-  text-decoration:none;
-  color:white;
-}
-
-.logo-link:hover{
-  color:#93c5fd;
-}
-
-/* --- FOOTER COMPLETO --- */
+/* FOOTER */
 footer{
   margin-top:60px;
-  padding:40px 8%;
+  padding:40px 5%;
   border-top:1px solid rgba(255,255,255,0.1);
   display:flex;
   justify-content:space-between;
@@ -243,26 +231,42 @@ footer{
   text-decoration:none;
 }
 
-/* RESPONSIVE: Si la pantalla es pequeña (Móviles), la barra va abajo y deja de ser fija */
-@media (max-width: 1150px) {
-  .contenedor-principal {
-    flex-direction: column;
-  }
-  .barra-lateral {
-    position: static;      /* Desactiva el efecto fijo en móviles */
-    max-width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  .seccion-sidebar {
-    flex: 1;
-    min-width: 280px;
+/* =======================================================
+   RESPONSIVE INTELIGENTE (SÓLO CUANDO DE VERDAD NO CABE)
+   ======================================================= */
+@media (max-width: 1200px) {
+  /* En pantallas medianas, bajamos las tarjetas a 2 columnas fijas */
+  .cards {
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
   }
 }
 
-@media (max-width: 600px) {
-  .barra-lateral {
+@media (max-width: 1024px) {
+  /* Si la pantalla es estrecha, estructuramos vertical para que no se aplaste nada */
+  .contenedor-principal {
     flex-direction: column;
+    padding: 20px 4%;
+    gap: 35px;
   }
+
+  .barra-lateral {
+    position: static;       
+    max-width: 100%;
+    width: 100%;
+    display: grid;          
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .cards {
+    grid-template-columns: 1fr; /* Una columna perfecta en móviles */
+  }
+  
+  .barra-lateral {
+    grid-template-columns: 1fr; 
+  }
+  
+  .titulo-seccion { font-size: 32px; }
 }
