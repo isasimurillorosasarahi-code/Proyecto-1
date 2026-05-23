@@ -1,272 +1,546 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
+/* =======================================================
+   SISTEMA DE DISEÑO INMERSIVO — NOU BLAU LUXURY MENU
+   ======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-body{
-  background:linear-gradient(to right,#00152d,#001b3d);
-  color:white;
+body {
+  background-color: #020712;
+  color: #e2e8f0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-header{
-  padding:25px 5%;
-  border-bottom:1px solid rgba(255,255,255,0.1);
+/* --- HERO HEADER CON DEGRADADO ATMOSFÉRICO --- */
+.hero-header {
+  position: relative;
+  padding: 80px 24px 40px 24px;
+  text-align: center;
+  background: radial-gradient(circle at top, #0b224d 0%, #020712 70%);
+  overflow: hidden;
 }
 
-header h1{
-  font-size:42px;
+.hero-blur {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: #3b82f6;
+  filter: blur(140px);
+  opacity: 0.3;
+  pointer-events: none;
 }
 
-/* --- CONTENEDOR PRINCIPAL: SE ADAPTA AL ANCHO DE LA PANTALLA --- */
-.contenedor-principal {
-  display: flex;
-  flex-direction: row;
-  width: 100%;             
-  padding: 40px 5%;
-  gap: 40px;               
+.hero-subtitle {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: #60a5fa;
+  margin-bottom: 12px;
 }
 
-.contenido-izquierdo {
-  flex: 3;
-  min-width: 0;
+.hero-title {
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #ffffff;
+  line-height: 1.1;
 }
 
-.sabores{
-  padding: 20px 0 40px 0;
+.hero-tagline {
+  font-size: 15px;
+  color: #94a3b8;
+  margin-top: 12px;
+  font-weight: 400;
 }
 
-.titulo-seccion{
-  font-size:42px;
-  margin-bottom:30px;
-  text-align: left; /* Alineado a la izquierda para mantener la estructura limpia */
-}
-
-.nota-artesanal {
-  color: #93c5fd;
-  font-size: 18px;
-  margin-bottom: 40px;
-  font-style: italic;
-}
-
-/* --- CUADRÍCULA PERFECTA (CSS GRID) --- */
-/* Esto obliga a que siempre haya 3 columnas perfectas alineadas a la izquierda */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(240px, 1fr)); 
-  gap: 25px;
+/* --- CONTENEDOR FLUIDO MOBILE-FIRST --- */
+.main-wrapper {
   width: 100%;
-}
-
-.flavor-card{
-  width: 100%;
-  background:rgba(255,255,255,0.05);
-  border-radius:30px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,0.08);
-  transition:0.3s;
+  max-width: 480px; /* Tamaño móvil estricto de lectura premium */
+  margin: 0 auto;
+  padding: 10px 24px 80px 24px;
   display: flex;
   flex-direction: column;
+  gap: 60px;
 }
 
-.flavor-card:hover{
-  transform:translateY(-8px);
+/* --- ENCABEZADOS DE SECCIÓN RE-IMAGINADOS --- */
+.block-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
-.flavor-image{
-  width:100%;
-  height:180px;
-  object-fit:cover;
-  display:block;
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.flavor-content{
-  padding:25px;
-  background:rgba(18,37,68,0.9);
-  flex-grow: 1; /* Hace que todas las cajitas midan exactamente lo mismo de alto */
-}
-
-.flavor-content h4{
-  font-size:24px;
-  margin-bottom:10px;
-}
-
-.precios-card {
-  color: #4da6ff;
-  font-weight: bold;
+.block-number {
   font-size: 14px;
+  font-weight: 800;
+  color: #3b82f6;
+  font-family: monospace;
+  opacity: 0.8;
 }
 
-.info-extra-box {
-  background: rgba(41, 82, 255, 0.1);
-  border: 1px solid rgba(41, 82, 255, 0.3);
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 40px;
-  text-align: left;
-  font-size: 16px;
+.block-main-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.8px;
+}
+
+.block-subtitle-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-top: -15px;
+  margin-bottom: 30px;
   line-height: 1.6;
 }
 
-/* --- BARRA LATERAL FIJA IMPRESCINDIBLE --- */
-.barra-lateral {
-  flex: 1; 
-  min-width: 320px;
-  max-width: 360px;
+/* --- NUEVAS TARJETAS COMPACTAS ESTILO LISTA (MÓVIL) --- */
+.showcase-grid {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 30px;               
-  height: max-content;     
-}
-
-.seccion-sidebar {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 25px;
-  padding: 25px;
-}
-
-.titulo-sidebar {
-  font-size: 22px;
-  color: white;
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid rgba(41, 82, 255, 0.4);
-}
-
-.lista-precios {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.item-precio {
-  display: flex;
-  justify-content: space-between;
-  font-size: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-}
-
-.item-precio strong {
-  color: #4da6ff;
-}
-
-.lista-tops {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 15px;
-}
-
-.descripcion-sidebar {
-  font-size: 15px;
-  line-height: 1.5;
-  color: #d6dce5;
-  margin-bottom: 15px;
-}
-
-.badge-lactosa {
-  display: inline-block;
-  background: #10b981;
-  color: white;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 10px;
-  text-align: center;
+  gap: 14px;
   width: 100%;
 }
 
-/* BOTONES */
-.boton-container{
-  width:100%;
-  display:flex;
-  justify-content: flex-start; /* Alineado al flujo de las tarjetas */
-  margin-top:40px;
+.art-card {
+  position: relative;
+  width: 100%;
+  height: 90px;
+  background: #060c16;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.btn-sabores{
-  padding:18px 45px;
-  background:linear-gradient(135deg,#2952ff,#1d4ed8);
-  color:white;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:600;
-  border-radius:18px;
-  transition:0.3s;
-  box-shadow:0 10px 25px rgba(41, 82, 255, 0.35);
+.art-img {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
-.btn-sabores:hover{
-  transform:translateY(-5px) scale(1.03);
-  background:linear-gradient(135deg,#3b82f6,#2563eb);
+.art-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* FOOTER */
-footer{
-  margin-top:60px;
-  padding:40px 5%;
-  border-top:1px solid rgba(255,255,255,0.1);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:20px;
+.art-card:hover .art-img img {
+  transform: scale(1.06);
 }
 
-.sociales{
-  display:flex;
-  gap:20px;
+.art-info {
+  position: relative;
+  padding: 0 0 0 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.sociales a{
-  color:#d6dce5;
-  text-decoration:none;
+.art-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+/* --- BOTÓN SUTIL CRISTALINO --- */
+.cta-center {
+  margin-top: 30px;
+  width: 100%;
+}
+
+.glass-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #3b82f6;
+}
+
+/* --- TARJETAS DE PRECIOS CON BORDE DE LUZ --- */
+.pricing-flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.premium-price-card {
+  position: relative;
+  background: #09101e;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 32px;
+  padding: 32px 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-glow {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 120px;
+  height: 120px;
+  background: #3b82f6;
+  filter: blur(50px);
+  opacity: 0.2;
+}
+
+.alt-glow {
+  border-color: rgba(16, 185, 129, 0.15);
+}
+
+.alt-glow .card-glow {
+  background: #10b981;
+}
+
+.premium-price-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.p-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.p-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  color: #94a3b8;
+}
+
+.p-list li strong {
+  font-size: 17px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.p-list .p-highlight {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 12px 16px;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.p-list .p-highlight strong {
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.12);
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.alt-glow .p-highlight strong {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.card-footer-note {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 24px;
+  line-height: 1.4;
+}
+
+/* --- FORMATO MINIMALISTA DE GRANIZADOS --- */
+.granizados-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.g-item {
+  background: #060c16;
+  border-radius: 24px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.g-img-box {
+  width: 70px;
+  height: 70px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #020712;
+  flex-shrink: 0;
+}
+
+.g-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.g-details {
+  flex-grow: 1;
+}
+
+.g-details h4 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.g-sizes-prices {
+  font-size: 13px;
+  color: #60a5fa;
+  font-weight: 700;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+}
+
+/* --- CUADRÍCULA DE SECCIONES ESPECIALES INFERIORES --- */
+.specials-masonry {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.spec-card {
+  background: #060c16;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.spec-icon {
+  font-size: 24px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.spec-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.spec-card p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+.spec-list-inner {
+  list-style: none;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.highlight-spec {
+  background: radial-gradient(circle at top left, #081a3a, #060c16);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+}
+
+.highlight-spec p strong {
+  color: #10b981;
+}
+
+.spec-sub-note {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  padding-top: 8px;
+}
+
+/* --- FOOTER --- */
+.luxury-footer {
+  padding: 60px 24px;
+  background: #01040a;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.luxury-footer p {
+  font-size: 13px;
+  color: #475569;
+}
+
+.footer-socials {
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 14px;
+  margin: 0 12px;
+  font-weight: 500;
 }
 
 /* =======================================================
-   RESPONSIVE INTELIGENTE (SÓLO CUANDO DE VERDAD NO CABE)
+   SISTEMA DE ETIQUETAS MÓVILES (ALÉRGENOS Y CAFÉ)
    ======================================================= */
-@media (max-width: 1200px) {
-  /* En pantallas medianas, bajamos las tarjetas a 2 columnas fijas */
-  .cards {
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-  }
+
+.tag-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
 }
 
-@media (max-width: 1024px) {
-  /* Si la pantalla es estrecha, estructuramos vertical para que no se aplaste nada */
-  .contenedor-principal {
-    flex-direction: column;
-    padding: 20px 4%;
-    gap: 35px;
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.tag-milk {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.tag-water {
+  background: rgba(14, 165, 233, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+.tag-gf {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.tag-gluten {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.spec-toggle-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.spec-toggle-box span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* =======================================================
+   💻 INTELIGENCIA RESPONSIVE PARA COMPUTADORAS / TABLETS
+   ======================================================= */
+@media (min-width: 768px) {
+  .main-wrapper {
+    max-width: 1040px;
+    padding: 40px 40px 100px 40px;
   }
 
-  .barra-lateral {
-    position: static;       
-    max-width: 100%;
-    width: 100%;
-    display: grid;          
-    grid-template-columns: repeat(2, 1fr); 
+  .hero-title { 
+    font-size: 72px; 
+  }
+
+  /* Las tarjetas de helados pasan a 2 columnas con proporciones elegantes en PC */
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-}
+  
+  .art-card { 
+    height: 110px;
+    padding: 14px;
+  }
 
-@media (max-width: 700px) {
-  .cards {
-    grid-template-columns: 1fr; /* Una columna perfecta en móviles */
+  .art-img {
+    width: 80px;
+    height: 80px;
   }
-  
-  .barra-lateral {
-    grid-template-columns: 1fr; 
+
+  .art-info h3 {
+    font-size: 20px;
   }
-  
-  .titulo-seccion { font-size: 32px; }
+
+  /* Las cajas de precios se alinean lado a lado */
+  .pricing-flex-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  /* Los granizados se abren en 2 columnas balanceadas */
+  .granizados-list-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  /* Los bloques informativos del final se expanden en 3 columnas */
+  .specials-masonry {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
 }
