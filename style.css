@@ -58,6 +58,11 @@ body {
   line-height: 1.1;
 }
 
+.hero-title a, .header-back-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .hero-tagline {
   font-size: 15px;
   color: #94a3b8;
@@ -76,7 +81,7 @@ body {
   gap: 60px;
 }
 
-/* --- ENCABEZADOS DE SECCIÓN RE-IMAGINADOS --- */
+/* --- ENCABEZADOS DE SECCIÓN --- */
 .block-header {
   display: flex;
   align-items: baseline;
@@ -107,7 +112,7 @@ body {
   line-height: 1.6;
 }
 
-/* --- NUEVAS TARJETAS COMPACTAS ESTILO LISTA (MÓVIL) --- */
+/* --- TARJETAS COMPACTAS ESTILO LISTA (MÓVIL) --- */
 .showcase-grid {
   display: flex;
   flex-direction: column;
@@ -118,22 +123,23 @@ body {
 .art-card {
   position: relative;
   width: 100%;
-  height: 90px;
+  min-height: 90px;
   background: #060c16;
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 20px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 16px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Soporte de imagen opcional solo para helados si se requiere */
 .art-img {
   position: relative;
-  width: 70px;
-  height: 70px;
-  border-radius: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -142,16 +148,10 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
-}
-
-.art-card:hover .art-img img {
-  transform: scale(1.06);
 }
 
 .art-info {
   position: relative;
-  padding: 0 0 0 16px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -166,9 +166,16 @@ body {
   margin-bottom: 4px;
 }
 
-/* --- BOTÓN SUTIL CRISTALINO --- */
+.card-description {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* --- BOTÓN CRISTALINO --- */
 .cta-center {
-  margin-top: 30px;
+  margin-top: 10px;
   width: 100%;
 }
 
@@ -284,57 +291,40 @@ body {
   line-height: 1.4;
 }
 
-/* --- FORMATO MINIMALISTA DE GRANIZADOS --- */
+/* --- SECCIÓN GRANIZADOS CASEROS (MÁXIMA LIGEREZA) --- */
 .granizados-list-container {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 28px; /* Espacio limpio entre filas */
 }
 
 .g-item {
-  background: #060c16;
-  border-radius: 24px;
-  padding: 16px;
+  background: transparent; /* Sin fondo pesado */
+  border: none;            /* Sin marcos */
+  padding: 0;
   display: flex;
-  align-items: center;
-  gap: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.02);
-}
-
-.g-img-box {
-  width: 70px;
-  height: 70px;
-  border-radius: 18px;
-  overflow: hidden;
-  background: #020712;
-  flex-shrink: 0;
-}
-
-.g-img-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.g-details {
-  flex-grow: 1;
+  flex-direction: column;
+  gap: 4px;
 }
 
 .g-details h4 {
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
 }
 
 .g-sizes-prices {
-  font-size: 13px;
-  color: #60a5fa;
-  font-weight: 700;
-  margin-top: 4px;
-  letter-spacing: 0.3px;
+  font-size: 15px;
+  color: #ffffff; /* Blanco nítido directo */
+  font-weight: 600;
+  margin-top: 2px;
 }
 
-/* --- CUADRÍCULA DE SECCIONES ESPECIALES INFERIORES --- */
+.sub-badge-green { font-size: 13px; color: #10b981; display: block; margin-top: 1px; }
+.sub-badge-blue  { font-size: 13px; color: #3b82f6; display: block; margin-top: 1px; }
+.sub-badge-gray  { font-size: 13px; color: #94a3b8; display: block; margin-top: 1px; }
+
+/* --- SECCIONES ESPECIALES INFERIORES (COMBINADOS / SIROPES) --- */
 .specials-masonry {
   display: flex;
   flex-direction: column;
@@ -370,11 +360,11 @@ body {
 .spec-list-inner {
   list-style: none;
   margin-top: 10px;
-  font-size: 13px;
+  font-size: 14px;
   color: #cbd5e1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .highlight-spec {
@@ -392,6 +382,81 @@ body {
   margin-top: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   padding-top: 8px;
+}
+
+/* --- LEYENDA DE ALÉRGENOS COMPACTA --- */
+.allergen-legend-bar {
+  background: #060c16;
+  border: 1px dashed rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.legend-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.legend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.legend-grid span {
+  font-size: 13px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- ETIQUETAS MÓVILES DE ALÉRGENOS --- */
+.tag-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.tag-allergen {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.sugar-label {
+  display: block;
+  color: #10b981;
+  font-size: 12px;
+  margin-top: 2px;
+  font-weight: 500;
+}
+
+.tag-water {
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sugar-free-card {
+  border-left: 3px solid #10b981 !important;
 }
 
 /* --- FOOTER --- */
@@ -414,83 +479,8 @@ body {
   color: #475569;
 }
 
-.footer-socials {
-  margin-top: 20px;
-}
-
-.footer-socials a {
-  color: #3b82f6;
-  text-decoration: none;
-  font-size: 14px;
-  margin: 0 12px;
-  font-weight: 500;
-}
-
 /* =======================================================
-   SISTEMA DE ETIQUETAS MÓVILES (ALÉRGENOS Y CAFÉ)
-   ======================================================= */
-
-.tag-group {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-  margin-top: 2px;
-}
-
-.tag {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 2px 6px;
-  border-radius: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.tag-milk {
-  background: rgba(59, 130, 246, 0.15);
-  color: #60a5fa;
-  border: 1px solid rgba(59, 130, 246, 0.2);
-}
-
-.tag-water {
-  background: rgba(14, 165, 233, 0.15);
-  color: #38bdf8;
-  border: 1px solid rgba(14, 165, 233, 0.2);
-}
-
-.tag-gf {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-
-.tag-gluten {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.spec-toggle-box {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 12px;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 12px;
-}
-
-.spec-toggle-box span {
-  font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* =======================================================
-   💻 INTELIGENCIA RESPONSIVE PARA COMPUTADORAS / TABLETS
+   💻 INTELIGENCIA RESPONSIVE (PC / TABLETS)
    ======================================================= */
 @media (min-width: 768px) {
   .main-wrapper {
@@ -502,7 +492,6 @@ body {
     font-size: 72px; 
   }
 
-  /* Las tarjetas de helados pasan a 2 columnas con proporciones elegantes en PC */
   .showcase-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -511,36 +500,29 @@ body {
   
   .art-card { 
     height: 110px;
-    padding: 14px;
-  }
-
-  .art-img {
-    width: 80px;
-    height: 80px;
+    padding: 16px;
   }
 
   .art-info h3 {
     font-size: 20px;
   }
 
-  /* Las cajas de precios se alinean lado a lado */
   .pricing-flex-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
 
-  /* Los granizados se abren en 2 columnas balanceadas */
+  /* La rejilla de granizados se abre en 2 columnas perfectas de forma nativa */
   .granizados-list-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    gap: 40px 32px;
   }
 
-  /* Los bloques informativos del final se expanden en 3 columnas */
   .specials-masonry {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
   }
 }
