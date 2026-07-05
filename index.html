@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nou Blau — Carta Artesanal</title>
-  <link rel="stylesheet" href="style.css">
+  <link class="css-link" rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -19,6 +19,7 @@
 
   <main class="main-wrapper">
 
+    <!-- SECCIÓN HELADOS -->
     <section class="menu-block">
       <div class="block-header">
         <h2 class="block-main-title">Nuestros Helados</h2>
@@ -66,34 +67,43 @@
       </div>
     </section>
 
+    <!-- SECCIÓN PRECIOS -->
     <section class="menu-block">
       <div class="block-header">
         <h2 class="block-main-title">Formatos y Precios</h2>
       </div>
-      <p class="section-notice">Indistintamente de la cantidad de sabores elegido</p>
+      <p class="block-subtitle-text">Indistintamente de la cantidad de sabores elegidos</p>
 
       <div class="pricing-flex-container">
         <div class="premium-price-card">
-          <h3>Tarrinas</h3>
+          <h3>Tarrinas y Cucuruchos</h3>
           <ul class="p-list">
-            <li><span>🍨 P</span> <strong>2,90€</strong></li>
-            <li><span>🍨 M</span> <strong>3,50€</strong></li>
-            <li><span>🍨 G</span> <strong>4,60€</strong></li>
-            <li class="p-highlight"><span>🍨 XL</span> <strong>9,00€</strong></li>
+            <li><span>🍦 Cucurucho P</span> <strong>2,70€</strong></li>
+            <li><span>🍨 Tarrina P</span> <strong>2,90€</strong></li>
+            <li><span>🍦 Cucurucho M</span> <strong>3,40€</strong></li>
+            <li><span>🍨 Tarrina M</span> <strong>3,50€</strong></li>
+            <li><span>🍦 Cucurucho G</span> <strong>4,30€</strong></li>
+            <li><span>🍨 Tarrina G</span> <strong>4,60€</strong></li>
+            <li class="p-highlight"><span>🍨 Tarrina XL</span> <strong>9,00€</strong></li>
+            <li><span>🍰 Corte Tradicional</span> <strong>3,60€</strong></li>
           </ul>
         </div>
 
         <div class="premium-price-card alt-glow">
-          <h3>Cucuruchos de Galleta</h3>
+          <h3>Copas de Helado</h3>
           <ul class="p-list">
-            <li><span>🍦 P</span> <strong>2,70€</strong></li>
-            <li><span>🍦 M</span> <strong>3,40€</strong></li>
-            <li class="p-highlight"><span>🍦 G</span> <strong>4,30€</strong></li>
+            <li><span>🍨 Copa 1 Bola</span> <strong>3,00€</strong></li>
+            <li><span>🍨 Copa 2 Bolas</span> <strong>4,50€</strong></li>
+            <li><span>🍨 Copa Merengada</span> <strong>5,00€</strong></li>
+            <li><span>🍨 Copa 3 Bolas</span> <strong>5,30€</strong></li>
+            <li><span>🍨 Copa Turrón</span> <strong>5,80€</strong></li>
+            <li class="p-highlight"><span>🍨 Copa 4 Bolas</span> <strong>6,30€</strong></li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- SECCIÓN BATIDOS -->
     <section class="menu-block">
       <div class="block-header">
         <h2 class="block-main-title">Batidos Cremosos</h2>
@@ -104,98 +114,152 @@
           <h3>Formatos Estándar</h3>
           <ul class="p-list">
             <li><span>🥤 Batido Estándar</span> <strong>4,50€</strong></li>
-            <li><span>🥤  Batido con Nata</span> <strong>5,00€</strong></li>
+            <li><span>🥤 Batido con Nata</span> <strong>5,00€</strong></li>
           </ul>
         </div>
         <div class="premium-price-card alt-glow">
           <h3>Formatos Especiales</h3>
           <ul class="p-list">
             <li><span>🥤 Batido de 1/2 Litro</span> <strong>5,50€</strong></li>
-            <li class="p-highlight"><span>🥤  1/2 Litro con Nata</span> <strong>5,80€</strong></li>
+            <li class="p-highlight"><span>🥤 1/2 Litro con Nata</span> <strong>5,80€</strong></li>
           </ul>
         </div>
       </div>
 
-      <div class="toppings-bar-container">
-        <span class="toppings-title">✨ ¡Hazlo a tu gusto!</span>
-        <p class="toppings-list">Elige tu sabor de helado favorito y lo mezclamos con nuestra base de leche preparada. Añade tu sirope gratis: Chocolate, Fresa o Caramelo.</p>
+      <div class="spec-card highlight-spec">
+        <h3>✨ ¡Hazlo a tu gusto!</h3>
+        <p>Elige tu sabor de helado favorito y lo mezclamos con nuestra base de leche preparada. Añade tu sirope gratis: Chocolate, Fresa o Caramelo.</p>
       </div>
     </section>
 
+    <!-- SECCIÓN GOFRES -->
+    <section class="menu-block">
+      <div class="block-header">
+        <h2 class="block-main-title">Gofres y Complementos</h2>
+      </div>
+
+      <div class="pricing-flex-container">
+        <div class="premium-price-card">
+          <h3>Gofres Artesanos</h3>
+          <ul class="p-list">
+            <li><span>🧇 Gofre Solo</span> <strong>2,20€</strong></li>
+            <li><span>🧇 Gofre con Chocolate</span> <strong>2,70€</strong></li>
+            <li><span>🧇 Gofre Choco y Nata</span> <strong>3,50€</strong></li>
+            <li class="p-highlight"><span>🧇 Gofre con Helado</span> <strong>4,00€</strong></li>
+          </ul>
+        </div>
+        <div class="premium-price-card alt-glow">
+          <h3>Para Acompañar</h3>
+          <ul class="p-list">
+            <li><span>🥖 Fartons Caseros</span> <strong>Consultar</strong></li>
+            <li><span>🥢 Barquillos Tradicionales</span> <strong>Consultar</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN GRANIZADOS -->
     <section class="menu-block">
       <div class="block-header">
         <h2 class="block-main-title">Granizados Caseros</h2>
       </div>
       
       <div class="granizados-list-container">
-        <div class="granizado-item">
-          <div class="granizado-info">
+        <div class="g-item">
+          <div class="g-details">
             <h4>Agualimón / Horchata / Leche Preparada</h4>
             <span class="sub-badge-green">¡Leche preparada 100% libre de lactosa!</span>
           </div>
-          <span class="granizado-price">P: 2,30€ | M: 2,60€ | G: 3,90€</span>
+          <div class="g-sizes-prices">P: 2,30€ | M: 2,60€ | G: 3,90€</div>
         </div>
 
-        <div class="granizado-item border-top-dashed">
-          <div class="granizado-info">
+        <div class="g-item">
+          <div class="g-details">
             <h4>☕ Café o Descafeinado</h4>
             <span class="sub-badge-blue">Elaborado exclusivamente en nuestra cafetera tradicional</span>
           </div>
-          <span class="granizado-price">P: 2,40€ | M: 2,70€ | G: 4,20€</span>
+          <div class="g-sizes-prices">P: 2,40€ | M: 2,70€ | G: 4,20€</div>
         </div>
 
-        <div class="granizado-item border-top-dashed">
-          <div class="granizado-info">
-            <h4> Mezclado</h4>
+        <div class="g-item">
+          <div class="g-details">
+            <h4>Mezclado</h4>
             <span class="sub-badge-amber">Combinación de Agualimón y Horchata</span>
           </div>
-          <span class="granizado-price">P: 2,30€ | M: 2,60€ | G: 3,90€</span>
+          <div class="g-sizes-prices">P: 2,30€ | M: 2,60€ | G: 3,90€</div>
         </div>
 
-        <div class="granizado-item border-top-dashed">
-          <div class="granizado-info">
+        <div class="g-item">
+          <div class="g-details">
             <h4>☕ Mezclas con Café</h4>
             <span class="sub-badge-gray">Fresquito (con leche) / Con Limón / Con Horchata</span>
           </div>
-          <span class="granizado-price">P: 2,40€ | M: 2,70€ | G: 4,20€</span>
+          <div class="g-sizes-prices">P: 2,40€ | M: 2,70€ | G: 4,20€</div>
         </div>
       </div>
     </section>
 
+    <!-- SECCIÓN COMBINACIONES -->
     <section class="menu-block">
       <div class="block-header">
-        <h2 class="block-main-title">Combinaciones con Bola — 3,90€</h2>
+        <h2 class="block-main-title">Combinaciones y Cafés</h2>
       </div>
 
       <div class="showcase-grid">
         <div class="art-card">
           <div class="art-info">
-            <h3>Blanco y Negro</h3>
+            <h3>Blanco y Negro <span class="card-price-badge">3,90€</span></h3>
             <p class="card-description">Café granizado con una bola de helado (leche merengada o nata).</p>
           </div>
         </div>
         <div class="art-card">
           <div class="art-info">
-            <h3>El Nacional</h3>
+            <h3>El Nacional <span class="card-price-badge">3,90€</span></h3>
             <p class="card-description">Café granizado con una bola de mantecado.</p>
           </div>
         </div>
         <div class="art-card">
           <div class="art-info">
-            <h3>El Valenciano</h3>
+            <h3>El Valenciano <span class="card-price-badge">3,90€</span></h3>
             <p class="card-description">Agualimón con una bola de mantecado.</p>
           </div>
         </div>
         <div class="art-card">
           <div class="art-info">
-            <h3>El Cubano</h3>
+            <h3>El Cubano <span class="card-price-badge">3,90€</span></h3>
             <p class="card-description">Horchata con una bola de chocolate.</p>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-info">
+            <h3>Frapé <span class="card-price-badge">3,90€</span></h3>
+            <p class="card-description">Café granizado batido con una bola de moka.</p>
+          </div>
+        </div>
+        <div class="art-card">
+          <div class="art-info">
+            <h3>Café con Bola <span class="card-price-badge">3,00€</span></h3>
+            <p class="card-description">Café solo espresso caliente servido con una bola de helado al gusto.</p>
           </div>
         </div>
       </div>
       
       <div class="extra-ball-notice">
         ➕ ¿Te quedaste con hambre? Añádeles una bola más de helado por solo <strong>+0,60€</strong>.
+      </div>
+    </section>
+
+    <!-- SECCIÓN DESAYUNOS -->
+    <section class="menu-block">
+      <div class="block-header">
+        <h2 class="block-main-title">Desayunos</h2>
+      </div>
+      <div class="art-card card-compact-padding">
+        <div class="art-info">
+          <h3>Tostadas Variadas</h3>
+          <p class="card-description">Disfruta de nuestras tostadas recién hechas para empezar el día de la mejor manera.</p>
+          <span class="sub-badge-amber">✨ Pregunta por nuestras tortillas del día y sugerencias fuera de carta.</span>
+        </div>
       </div>
     </section>
 
